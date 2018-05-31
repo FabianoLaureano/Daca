@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Alunos Cadastrados</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Lista de Alunos</h1>
+	
+	<h3><a href="/cadastrarAluno">Cadastrar Aluno</a></h3>
+	
+		<table>
+   			<th:block th:each="aluno : ${alunos}">
+      			<tr>
+      				<div class="row">
+      					<div class="input-field col s3">
+      						<td th:text="${aluno.matricula}">...</td>
+      					</div>
+      					<div class="input-field col s6">
+      						<td th:text="${aluno.nome}">...</td>
+      					</div>
+      					<div class="input-field col s6">
+      						<td th:text="${aluno.codigoCurso}">...</td>
+      					</div>
+      					<div class="input-field col s6">
+      						<td th:text="${aluno.telefone}">...</td>
+      					</div>
+      					<div class="input-field col s6">
+      						<td th:text="${aluno.email}">...</td>
+      					</div>      				
+      				</div>
+         			
+      			</tr>
+   			</th:block>
+		</table>
+		
+</body>
+</html>
