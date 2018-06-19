@@ -7,5 +7,6 @@ import com.qma.models.Aluno;
 public interface AlunoRepository extends CrudRepository<Aluno, Integer> {
 
 	Aluno findByMatricula(String matricula);
+	//String findByUsername(String username);
 	
 }

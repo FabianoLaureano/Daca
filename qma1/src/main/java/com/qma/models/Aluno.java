@@ -51,12 +51,12 @@ public class Aluno implements Serializable {
 		this.email = email;
 	}
 
-	public int getId() {
+	/*public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
+	}*/
 	public String getMatricula() {
 		return matricula;
 	}
