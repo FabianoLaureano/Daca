@@ -51,12 +51,12 @@ public class Aluno implements Serializable {
 		this.email = email;
 	}
 
-	/*public int getId() {
+	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}*/
+	}
 	public String getMatricula() {
 		return matricula;
 	}
@@ -93,5 +93,65 @@ public class Aluno implements Serializable {
 	public void setNota(String nota) {
 		this.nota = nota;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((codigoCurso == null) ? 0 : codigoCurso.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((matricula == null) ? 0 : matricula.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((nota == null) ? 0 : nota.hashCode());
+		result = prime * result + ((telefone == null) ? 0 : telefone.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		if (codigoCurso == null) {
+			if (other.codigoCurso != null)
+				return false;
+		} else if (!codigoCurso.equals(other.codigoCurso))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (id != other.id)
+			return false;
+		if (matricula == null) {
+			if (other.matricula != null)
+				return false;
+		} else if (!matricula.equals(other.matricula))
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		if (nota == null) {
+			if (other.nota != null)
+				return false;
+		} else if (!nota.equals(other.nota))
+			return false;
+		if (telefone == null) {
+			if (other.telefone != null)
+				return false;
+		} else if (!telefone.equals(other.telefone))
+			return false;
+		return true;
+	}
+	
+	
 	
 }

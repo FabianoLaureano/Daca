@@ -10,29 +10,30 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.qma.models.AjudaOnline;
 import com.qma.repository.AjudaOnlineRepository;
+import com.qma.services.AjudaOnlineServiceImpl;
 
 @Controller
 public class AjudaOnlineController {
 	
 	@Autowired
-	private AjudaOnlineRepository ajudaOnlineRepository;
+	private AjudaOnlineServiceImpl ajudaOnlineRepository;
 	
-	@GetMapping("/cadastrarAjudaOnline")
+	@GetMapping("/ajudaonline")
     public String greetingForm(Model model) {
         model.addAttribute("ajudaonline", new AjudaOnline());
         return "cadastrarAjudaOnline";
     }
 
-    @PostMapping("/cadastrarAjudaOnline")
+    @PostMapping("/ajudaonline")
     public String greetingSubmit(@ModelAttribute AjudaOnline ajuda) {
-    	ajudaOnlineRepository.save(ajuda);
-        return "redirect:/cadastrarAjudaOnline";
+    	ajudaOnlineRepository.cadastraAjudaOnline(ajuda);
+        return "redirect:/ajudaonline";
     }
     
-    @GetMapping(path="/todasAjudasOnline")
+    @GetMapping(path="/ajudasonline")
 	public @ResponseBody Iterable<AjudaOnline> getAllTutores() {
 		// This returns a JSON or XML with the users
-		return ajudaOnlineRepository.findAll();
+		return ajudaOnlineRepository.findAllAjudaOnline();
 	}
 
 }

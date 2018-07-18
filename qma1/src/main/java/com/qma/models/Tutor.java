@@ -137,4 +137,70 @@ public class Tutor {
 		this.proficiencia = proficiencia;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((codigoCurso == null) ? 0 : codigoCurso.hashCode());
+		result = prime * result + Float.floatToIntBits(dinheiro_recebido);
+		result = prime * result + ((disciplina == null) ? 0 : disciplina.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + matricula;
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + nota;
+		result = prime * result + ((proficiencia == null) ? 0 : proficiencia.hashCode());
+		result = prime * result + ((telefone == null) ? 0 : telefone.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Tutor other = (Tutor) obj;
+		if (codigoCurso == null) {
+			if (other.codigoCurso != null)
+				return false;
+		} else if (!codigoCurso.equals(other.codigoCurso))
+			return false;
+		if (Float.floatToIntBits(dinheiro_recebido) != Float.floatToIntBits(other.dinheiro_recebido))
+			return false;
+		if (disciplina == null) {
+			if (other.disciplina != null)
+				return false;
+		} else if (!disciplina.equals(other.disciplina))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (matricula != other.matricula)
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		if (nota != other.nota)
+			return false;
+		if (proficiencia == null) {
+			if (other.proficiencia != null)
+				return false;
+		} else if (!proficiencia.equals(other.proficiencia))
+			return false;
+		if (telefone == null) {
+			if (other.telefone != null)
+				return false;
+		} else if (!telefone.equals(other.telefone))
+			return false;
+		return true;
+	}
+	
+	
+
 }

@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Cadastrar</h1>
-    <form action="#" th:action="@{/cadastrarTutor}" th:object="${tutor}" method="post">
+    <form action="#" th:action="@{/tutor}" th:object="${tutor}" method="post">
     	<p>Matricula: <input type="text" th:field="*{matricula}" required /></p>
     	<p>Disciplina: <input type="text" th:field="*{disciplina}" required /></p>
     	<p>Proficiencia: <input type="text" th:field="*{proficiencia}" required /></p>
